@@ -37,9 +37,9 @@ for i in range(110,2999999):
         except:
             print("Severity: Nil")
         try:
-            print(f"Summary: \n\t{output['summaries'][0]['content']}")
+            print(f"Description: \n\t{output['vulnerability_information']}")#['summaries'][0]['content']
         except:
-            print("Summary: Nil")
+            print("Description: Nil")
         print('\n')
 
     elif response.status_code == 403:
