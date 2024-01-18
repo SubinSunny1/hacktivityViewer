@@ -2,7 +2,7 @@ import requests
 
 #reportID = 110
 
-for i in range(110,2999999):
+for i in range(499,2999999):
     url = f"https://hackerone.com/reports/{i}.json"
     headers = {
         'Accept': 'application/json',
@@ -20,6 +20,10 @@ for i in range(110,2999999):
             print(f"Report Title: {output['title']}")
         except:
             print("Report Title: Nil")
+        try:
+            print(f"Reported to: {output['team']['profile']['name']}")
+        except:
+            print("Reported to: Nil")            
         try:
             print(f"Reporter: {output['reporter']['username']}")
         except:
@@ -42,9 +46,9 @@ for i in range(110,2999999):
             print("Description: Nil")
         print('\n')
 
-    elif response.status_code == 403:
+    #elif response.status_code == 403:
         #print(f"Report not public")
-        pass
+    #    pass
 
     else:
         #print("+++++++++++End of Reports+++++++++++")

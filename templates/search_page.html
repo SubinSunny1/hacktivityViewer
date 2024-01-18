@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="search">
+        <div class="column is-one-third is-offset-one-third">
+            <input type="text" class="input" placeholder="Search" autocomplete="on" autofocus name="q" hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target="#results">
+        </div>
+    </div>
+
+<div class="search-results">
+    <table class="table is-fullwidth">
+            <tr>
+                <th>Report ID</th>
+                <th>Reporter</th>
+                <th>Program</th>
+                <th>Weakness</th>
+                <th>Severity</th>
+                <th>Bounty $</th>
+            </tr>
+
+
+        <tbody id="results">
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

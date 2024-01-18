@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title> Weaknesses</title>
+{% endblock %}
+
+{% block content %}
+        <h1 class="all-weaknesses">All Weaknesses in HackerOne</h1>
+        <ul class="weakness-list">
+            {% for w in weaknesses_on_page %}
+            <li class="weakness-list"><a href="/allWeaknesses/{{w.category}}">{{w.category}}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="pages">
+            {% if page > 1 %}
+            <a href="{{url_for('weaknesses', page=page-1)}}">Pervious</a>
+            {% endif %}
+            <span>Page {{page}} of {{total_pages}}</span>
+            {% if page < total_pages %}
+            <a href="{{url_for('weaknesses', page=page+1)}}">Next</a>
+            {% endif %}
+        </div>
+
+{% endblock %}

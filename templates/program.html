@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title> {{client}}</title>
+{% endblock %}
+
+{% block content %}
+        <h1 class="all-programs">All Reports of {{client}}</h1>
+        <ul class="program-list">
+            {% for p in programs_on_page %}
+            <li class="program-list"><a href="{{ url_for('report', id = p.id)}}">{{p.id}}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="pages">
+            {% if page > 1 %}
+            <a href="{{url_for('program',client=client, page=page-1)}}">Pervious</a>
+            {% endif %}
+            <span>Page {{page}} of {{total_pages}}</span>
+            {% if page < total_pages %}
+            <a href="{{url_for('program',client=client, page=page+1)}}">Next</a>
+            {% endif %}
+        </div>
+
+{% endblock %}

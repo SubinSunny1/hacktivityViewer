@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>h1Scraper</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+        <script src="https://kit.fontawesome.com/15e7428a60.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div class="topnav">
+                <a class="active" href="/">h1Scraper</a>
+                <a href="publishedReports">Published Reports</a>
+                <a href="/allPrograms">Programs</a>
+                <a href="/allReporters">Reporters</a>
+                <a href="/allWeaknesses">Weaknesses</a>
+                <a href="/searchPage">Search<button><i class="fa-solid fa-magnifying-glass"></i></button></a>
+        
+            </div>
+        </header>
+        <div class="container">
+        <table class="top-bounty">
+            <caption class="table-header">Top 10 Bounties</caption>
+            <tr class="table-header">
+                <th>Reporter</th>
+                <th>Bounty $</th>
+                <th>Report ID</th>
+                <th>Program</th>
+                <th>Weakness</th>
+            </tr>
+            
+            {% for row in top_10_bounties %}
+            <tr>
+                {% for cell in row %}                
+                <td>{{cell}}</td>    
+                {% endfor %}            
+            </tr>
+            {% endfor %}
+        </table>
+        <table class="top-reporters">
+            <caption class="table-header">Top 10 Reporters</caption>
+            <tr class="table-header">
+                <th>UserID</th>
+                <th>No. of Reports</th>
+            </tr>
+            {% for row in top_10_reporters %}
+            <tr>
+                <td>{{row[0][0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table class="top-earners">
+            <caption class="table-header">Top 10 Earners</caption>
+            <tr class="table-header">
+                <th>UserID</th>
+                <th>Total Earnings $</th>                
+            </tr>
+            {% for row in top_10_earners %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+        <table class="top-programs">
+            <caption class="table-header">Top 10 Programs</caption>
+            <tr class="table-header">
+                <th>Program</th>
+                <th>Total Bounties Rewarded $</th>                
+            </tr>
+            {% for row in top_10_programs %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+        <table class="top-reporterd-vulnerabilities">
+            <caption class="table-header">Top 10 Reported Weaknesses</caption>
+            <tr class="table-header">
+                <th>Weakness</th>
+                <th>No. of Reports</th>
+            </tr>
+            {% for row in top_10_reporterd_vulnerability %}
+            <tr>
+                <td>{{row[0][0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table class="top-rewarded-vulnerabilities">
+            <caption class="table-header">Top 10 Rewarded Weaknesses</caption>
+            <tr class="table-header">
+                <th>Weakness</th>
+                <th>Total Bounty $</th>                
+            </tr>
+            {% for row in top_10_rewarded_vulnerabilities %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+
+        </div>
+        
+        <footer>Thank You!</footer>
+
+    </body>
+
+</html>

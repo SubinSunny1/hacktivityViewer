@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title> {{category}}</title>
+{% endblock %}
+
+{% block content %}
+        <h1 class="all-weaknesses">All Reports on {{category}}</h1>
+        <ul class="weakness-list">
+            {% for w in weaknesses_on_page %}
+            <li class="weakness-list"><a href="{{ url_for('report', id = w.id)}}">{{w.id}}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="pages">
+            {% if page > 1 %}
+            <a href="{{url_for('weakness',category=category, page=page-1)}}">Pervious</a>
+            {% endif %}
+            <span>Page {{page}} of {{total_pages}}</span>
+            {% if page < total_pages %}
+            <a href="{{url_for('weakness',category=category, page=page+1)}}">Next</a>
+            {% endif %}
+        </div>
+
+{% endblock %}

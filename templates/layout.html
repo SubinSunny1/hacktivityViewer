@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block title %}
+        {% endblock %}
+        <link rel="stylesheet" href="/static/css/style.css">
+        <script src="https://kit.fontawesome.com/15e7428a60.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    </head>
+    <body>
+        <div id="page-container">
+            <header>
+                <div class="topnav">
+                    <a class="active" href="/">h1Scraper</a>
+                    <a href="/publishedReports">Published Reports</a>
+                    <a href="/allPrograms">Programs</a>
+                    <a href="/allReporters">Reporters</a>
+                    <a href="/allWeaknesses">Weaknesses</a>
+                    <a href="/searchPage" class="searchbutton">Search<button><i class="fa-solid fa-magnifying-glass"></i></button></a>
+
+                </div>
+            </header>
+            <div id="content-wrap">
+            {% block content %}
+
+            {% endblock %}
+            </div>
+            <footer>Thank You!</footer>
+        </div>
+    </body>
+</html>

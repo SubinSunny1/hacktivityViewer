@@ -1,0 +1,359 @@
+{
+  "id": 1553,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xNTUz",
+  "url": "https://hackerone.com/reports/1553",
+  "title": "XSS Reflected - Yahoo Travel",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2014-02-16T09:36:26.304Z",
+  "submitted_at": "2014-02-16T09:36:26.304Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "akkilion",
+    "url": "/akkilion",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/qdddjm8p4ypgol0ot85zdxm57vms/3c7b305354c9073c106ae3d1701798defaaf5be844fb8fdfa49ca62f991a2c2c?response-content-disposition=inline%3B%20filename%3D%22man-paint-sky-painting-colors-hood-illustration-concept-art.jpg%22%3B%20filename%2A%3DUTF-8%27%27man-paint-sky-painting-colors-hood-illustration-concept-art.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ44LRBWAD%2F20240102%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240102T080004Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGiKeRVTc5Yp1RddGNKdsirU%2FZeOTzS9fuGijcxCvH8dAiB4Iw%2BGge1dFwSPKR4DEO6WdQ1vgEqU42ElHRGBxoOIZyqyBQhAEAMaDDAxMzYxOTI3NDg0OSIMY0RYLE70maHWbXCnKo8FLLyvhvWvKyknnteOs58rzZl%2Bb07lny%2FmOJge1acHOIs%2FAp1ODmT2eCb2662mfDSuCcSclTriDSMNBe80jVII8lZY6SVsYkDcFVPGgfVD0llYTGZFdlP2HVOmC0%2FpoV6s07L5pDL%2BC%2B0Qd3UY57wcASWSpM%2B7HeXtQvvyYk2s2%2F%2FfZkSlzbpBsPeRXw1SD4U2tK%2Ftu69ol3X1lBs6KPWfR5Q1imxg4cxSHEH%2FDvTwxu2u6zqjSdB%2Fr0NN28V50vA9Su6xpW7DGzJmkHgQqpcK00tO7zyihMM4KtqDpULuG0Qr5ZvZC%2Fa2N%2BgylNc5s%2BQJbsILhlFg%2FUU51XLUr67QS7t8f7PK0sDLneKElB1jcdFN4MPjQftKxDh0aO9pFBbEAsU8Tml4tWEDi9TOhvIXBX6lreoyV6K28bLvROFT7uGe6z2Rhkj%2F39p%2BehrVERHBfrKEQvD3N7j47OjSsyLfBZs8%2Bvy2lD7gC%2FsKJAsSLfwk4RsDENjtyKxQTLgjUpYOw7K9fES8fTIFtBKzSxsA0bsFF60512hxgJl9VqrgNIdwMtM5q1%2FwEo4p%2FoQnX8Z98Lwr1KmdY4jd2h3gCiCfbFpDw8sMA35i0BndMZ0Y8Cx%2F48BVBvdPF%2BTFcxwkLhqjtkUTya9PDLEHrUsp2%2B%2FYhJFNCzSyrewlTcgFEGIWQqRrHKYqZ6DCyD%2B598FtX6rcXUbY%2FYtLcuLJbbxeJx5GqeVlAWDb674KkeJeaeCgMvvex7d0DhMcBk79BZZfoSxyf934te7Amyf8WhExZFinGa2YG1jw7dHzKU8TxzconD1K6ei16fhy7Cor%2BfSVeitjKKJFe7ANXmNnemOc6ck1b2BeoF4SIWjtAH3Z4qNjsDDR686sBjqyAWZJLWt7fDHrg6n4OGB0M7e388Oi1fEOy4lCUadPkzlBbkhvmyAAXN%2FsSZFzs1X1JmZ2PfG4abRWKkrFHSO27sVWaupIE7KkMPiZraHwFuw4XLDgW2QuR4qfFoWp9xC%2BNYAQsnxeUHqH%2B6mkIdAu7xDxu0wA%2F06rgtV8PyqPlbDoTYGEgxbLmZMRJFlt98Yrn3Wgmi%2FPE0dq7QkXuYER7X10tXVO7HnX0M7m1Jxq69cBpho%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=6a14a5cb84717cdabef8a62f697a88bf91c35254c62443c25033dd53aa1e8217"
+    },
+    "is_me?": false,
+    "cleared": true,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 19,
+    "url": "https://hackerone.com/yahoo",
+    "handle": "yahoo",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/ovsvj0mnvrwohrfwp6e245bqc0to/d3dc6b2d7e2dc3657e8861b0d7e2dfca1a6d513dd784c613f4e56738907cea98?response-content-disposition=inline%3B%20filename%3D%22Slack%20600x600%20-%20YBANG.png%22%3B%20filename%2A%3DUTF-8%27%27Slack%2520600x600%2520-%2520YBANG.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ44LRBWAD%2F20240102%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240102T080004Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGiKeRVTc5Yp1RddGNKdsirU%2FZeOTzS9fuGijcxCvH8dAiB4Iw%2BGge1dFwSPKR4DEO6WdQ1vgEqU42ElHRGBxoOIZyqyBQhAEAMaDDAxMzYxOTI3NDg0OSIMY0RYLE70maHWbXCnKo8FLLyvhvWvKyknnteOs58rzZl%2Bb07lny%2FmOJge1acHOIs%2FAp1ODmT2eCb2662mfDSuCcSclTriDSMNBe80jVII8lZY6SVsYkDcFVPGgfVD0llYTGZFdlP2HVOmC0%2FpoV6s07L5pDL%2BC%2B0Qd3UY57wcASWSpM%2B7HeXtQvvyYk2s2%2F%2FfZkSlzbpBsPeRXw1SD4U2tK%2Ftu69ol3X1lBs6KPWfR5Q1imxg4cxSHEH%2FDvTwxu2u6zqjSdB%2Fr0NN28V50vA9Su6xpW7DGzJmkHgQqpcK00tO7zyihMM4KtqDpULuG0Qr5ZvZC%2Fa2N%2BgylNc5s%2BQJbsILhlFg%2FUU51XLUr67QS7t8f7PK0sDLneKElB1jcdFN4MPjQftKxDh0aO9pFBbEAsU8Tml4tWEDi9TOhvIXBX6lreoyV6K28bLvROFT7uGe6z2Rhkj%2F39p%2BehrVERHBfrKEQvD3N7j47OjSsyLfBZs8%2Bvy2lD7gC%2FsKJAsSLfwk4RsDENjtyKxQTLgjUpYOw7K9fES8fTIFtBKzSxsA0bsFF60512hxgJl9VqrgNIdwMtM5q1%2FwEo4p%2FoQnX8Z98Lwr1KmdY4jd2h3gCiCfbFpDw8sMA35i0BndMZ0Y8Cx%2F48BVBvdPF%2BTFcxwkLhqjtkUTya9PDLEHrUsp2%2B%2FYhJFNCzSyrewlTcgFEGIWQqRrHKYqZ6DCyD%2B598FtX6rcXUbY%2FYtLcuLJbbxeJx5GqeVlAWDb674KkeJeaeCgMvvex7d0DhMcBk79BZZfoSxyf934te7Amyf8WhExZFinGa2YG1jw7dHzKU8TxzconD1K6ei16fhy7Cor%2BfSVeitjKKJFe7ANXmNnemOc6ck1b2BeoF4SIWjtAH3Z4qNjsDDR686sBjqyAWZJLWt7fDHrg6n4OGB0M7e388Oi1fEOy4lCUadPkzlBbkhvmyAAXN%2FsSZFzs1X1JmZ2PfG4abRWKkrFHSO27sVWaupIE7KkMPiZraHwFuw4XLDgW2QuR4qfFoWp9xC%2BNYAQsnxeUHqH%2B6mkIdAu7xDxu0wA%2F06rgtV8PyqPlbDoTYGEgxbLmZMRJFlt98Yrn3Wgmi%2FPE0dq7QkXuYER7X10tXVO7HnX0M7m1Jxq69cBpho%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=c3da2e709665dd31b53182ca3b511ad617581b4084a97628a35de6613f4db522",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/ovsvj0mnvrwohrfwp6e245bqc0to/5136ed9b2fa7c4d4abbf39fb971047c62d98ec4740a88eb55d7e26373250a937?response-content-disposition=inline%3B%20filename%3D%22Slack%20600x600%20-%20YBANG.png%22%3B%20filename%2A%3DUTF-8%27%27Slack%2520600x600%2520-%2520YBANG.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ44LRBWAD%2F20240102%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240102T080004Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGiKeRVTc5Yp1RddGNKdsirU%2FZeOTzS9fuGijcxCvH8dAiB4Iw%2BGge1dFwSPKR4DEO6WdQ1vgEqU42ElHRGBxoOIZyqyBQhAEAMaDDAxMzYxOTI3NDg0OSIMY0RYLE70maHWbXCnKo8FLLyvhvWvKyknnteOs58rzZl%2Bb07lny%2FmOJge1acHOIs%2FAp1ODmT2eCb2662mfDSuCcSclTriDSMNBe80jVII8lZY6SVsYkDcFVPGgfVD0llYTGZFdlP2HVOmC0%2FpoV6s07L5pDL%2BC%2B0Qd3UY57wcASWSpM%2B7HeXtQvvyYk2s2%2F%2FfZkSlzbpBsPeRXw1SD4U2tK%2Ftu69ol3X1lBs6KPWfR5Q1imxg4cxSHEH%2FDvTwxu2u6zqjSdB%2Fr0NN28V50vA9Su6xpW7DGzJmkHgQqpcK00tO7zyihMM4KtqDpULuG0Qr5ZvZC%2Fa2N%2BgylNc5s%2BQJbsILhlFg%2FUU51XLUr67QS7t8f7PK0sDLneKElB1jcdFN4MPjQftKxDh0aO9pFBbEAsU8Tml4tWEDi9TOhvIXBX6lreoyV6K28bLvROFT7uGe6z2Rhkj%2F39p%2BehrVERHBfrKEQvD3N7j47OjSsyLfBZs8%2Bvy2lD7gC%2FsKJAsSLfwk4RsDENjtyKxQTLgjUpYOw7K9fES8fTIFtBKzSxsA0bsFF60512hxgJl9VqrgNIdwMtM5q1%2FwEo4p%2FoQnX8Z98Lwr1KmdY4jd2h3gCiCfbFpDw8sMA35i0BndMZ0Y8Cx%2F48BVBvdPF%2BTFcxwkLhqjtkUTya9PDLEHrUsp2%2B%2FYhJFNCzSyrewlTcgFEGIWQqRrHKYqZ6DCyD%2B598FtX6rcXUbY%2FYtLcuLJbbxeJx5GqeVlAWDb674KkeJeaeCgMvvex7d0DhMcBk79BZZfoSxyf934te7Amyf8WhExZFinGa2YG1jw7dHzKU8TxzconD1K6ei16fhy7Cor%2BfSVeitjKKJFe7ANXmNnemOc6ck1b2BeoF4SIWjtAH3Z4qNjsDDR686sBjqyAWZJLWt7fDHrg6n4OGB0M7e388Oi1fEOy4lCUadPkzlBbkhvmyAAXN%2FsSZFzs1X1JmZ2PfG4abRWKkrFHSO27sVWaupIE7KkMPiZraHwFuw4XLDgW2QuR4qfFoWp9xC%2BNYAQsnxeUHqH%2B6mkIdAu7xDxu0wA%2F06rgtV8PyqPlbDoTYGEgxbLmZMRJFlt98Yrn3Wgmi%2FPE0dq7QkXuYER7X10tXVO7HnX0M7m1Jxq69cBpho%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=af894f52a2319191547aa66be249fed64fed8521e443f1c798e4d9938bdb3e99"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "profile": {
+      "name": "Yahoo!",
+      "twitter_handle": "yahoo",
+      "website": "https://www.yahoo.com",
+      "about": "Build Brands Members Love"
+    }
+  },
+  "has_bounty?": false,
+  "in_validation?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "no-content",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2015-08-14T20:10:11.686Z",
+  "bug_reporter_agreed_on_going_public_at": "2014-04-23T15:17:03.577Z",
+  "team_member_agreed_on_going_public_at": "2015-08-14T20:10:10.823Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "",
+  "weakness": {
+    "id": 60,
+    "name": "Cross-site Scripting (XSS) - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [],
+  "allow_singular_disclosure_at": "2014-04-05T19:44:54.761Z",
+  "allow_singular_disclosure_after": -307455310.12488645,
+  "singular_disclosure_allowed": true,
+  "vote_count": 3,
+  "voters": [
+    "sw33tlie",
+    "shivammusic",
+    "vtim"
+  ],
+  "structured_scope": null,
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_create_retest?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_manage_link_sharing?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "activities": [
+    {
+      "id": 11948,
+      "is_internal": false,
+      "editable": false,
+      "type": "Activities::BugTriaged",
+      "message": "",
+      "automated_response": false,
+      "created_at": "2014-03-03T21:45:39.260Z",
+      "updated_at": "2014-03-03T21:45:39.260Z",
+      "actor": {
+        "username": "schofield",
+        "cleared": false,
+        "verified": false,
+        "url": "/schofield",
+        "profile_picture_urls": {
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/000/001/969/a5bdc5e7b77c5d3663d5a7a0b837653f25bd34e0_original.jpg/f4a495c04fdb224bac8ec64587537e511aa8c4925e7955bee0a19e0ed7d891dc"
+        },
+        "hackerone_triager": false,
+        "hackerone_employee": false
+      },
+      "genius_execution_id": null,
+      "team_handle": "yahoo"
+    },
+    {
+      "id": 13967,
+      "is_internal": false,
+      "editable": false,
+      "type": "Activities::BugResolved",
+      "message": "",
+      "automated_response": false,
+      "created_at": "2014-03-06T20:44:55.295Z",
+      "updated_at": "2014-03-06T20:44:55.295Z",
+      "actor": {
+        "username": "schofield",
+        "cleared": false,
+        "verified": false,
+        "url": "/schofield",
+        "profile_picture_urls": {
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/000/001/969/a5bdc5e7b77c5d3663d5a7a0b837653f25bd34e0_original.jpg/f4a495c04fdb224bac8ec64587537e511aa8c4925e7955bee0a19e0ed7d891dc"
+        },
+        "hackerone_triager": false,
+        "hackerone_employee": false
+      },
+      "reporter": {
+        "username": "akkilion",
+        "url": "/akkilion"
+      },
+      "genius_execution_id": null,
+      "team_handle": "yahoo"
+    },
+    {
+      "id": 13969,
+      "is_internal": false,
+      "editable": false,
+      "type": "Activities::Comment",
+      "message": "",
+      "automated_response": false,
+      "created_at": "2014-03-06T20:47:21.449Z",
+      "updated_at": "2014-03-06T20:47:21.449Z",
+      "actor": {
+        "username": "akkilion",
+        "cleared": true,
+        "verified": true,
+        "url": "/akkilion",
+        "profile_picture_urls": {
+          "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/qdddjm8p4ypgol0ot85zdxm57vms/f4a495c04fdb224bac8ec64587537e511aa8c4925e7955bee0a19e0ed7d891dc?response-content-disposition=inline%3B%20filename%3D%22man-paint-sky-painting-colors-hood-illustration-concept-art.jpg%22%3B%20filename%2A%3DUTF-8%27%27man-paint-sky-painting-colors-hood-illustration-concept-art.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ44LRBWAD%2F20240102%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240102T080004Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGiKeRVTc5Yp1RddGNKdsirU%2FZeOTzS9fuGijcxCvH8dAiB4Iw%2BGge1dFwSPKR4DEO6WdQ1vgEqU42ElHRGBxoOIZyqyBQhAEAMaDDAxMzYxOTI3NDg0OSIMY0RYLE70maHWbXCnKo8FLLyvhvWvKyknnteOs58rzZl%2Bb07lny%2FmOJge1acHOIs%2FAp1ODmT2eCb2662mfDSuCcSclTriDSMNBe80jVII8lZY6SVsYkDcFVPGgfVD0llYTGZFdlP2HVOmC0%2FpoV6s07L5pDL%2BC%2B0Qd3UY57wcASWSpM%2B7HeXtQvvyYk2s2%2F%2FfZkSlzbpBsPeRXw1SD4U2tK%2Ftu69ol3X1lBs6KPWfR5Q1imxg4cxSHEH%2FDvTwxu2u6zqjSdB%2Fr0NN28V50vA9Su6xpW7DGzJmkHgQqpcK00tO7zyihMM4KtqDpULuG0Qr5ZvZC%2Fa2N%2BgylNc5s%2BQJbsILhlFg%2FUU51XLUr67QS7t8f7PK0sDLneKElB1jcdFN4MPjQftKxDh0aO9pFBbEAsU8Tml4tWEDi9TOhvIXBX6lreoyV6K28bLvROFT7uGe6z2Rhkj%2F39p%2BehrVERHBfrKEQvD3N7j47OjSsyLfBZs8%2Bvy2lD7gC%2FsKJAsSLfwk4RsDENjtyKxQTLgjUpYOw7K9fES8fTIFtBKzSxsA0bsFF60512hxgJl9VqrgNIdwMtM5q1%2FwEo4p%2FoQnX8Z98Lwr1KmdY4jd2h3gCiCfbFpDw8sMA35i0BndMZ0Y8Cx%2F48BVBvdPF%2BTFcxwkLhqjtkUTya9PDLEHrUsp2%2B%2FYhJFNCzSyrewlTcgFEGIWQqRrHKYqZ6DCyD%2B598FtX6rcXUbY%2FYtLcuLJbbxeJx5GqeVlAWDb674KkeJeaeCgMvvex7d0DhMcBk79BZZfoSxyf934te7Amyf8WhExZFinGa2YG1jw7dHzKU8TxzconD1K6ei16fhy7Cor%2BfSVeitjKKJFe7ANXmNnemOc6ck1b2BeoF4SIWjtAH3Z4qNjsDDR686sBjqyAWZJLWt7fDHrg6n4OGB0M7e388Oi1fEOy4lCUadPkzlBbkhvmyAAXN%2FsSZFzs1X1JmZ2PfG4abRWKkrFHSO27sVWaupIE7KkMPiZraHwFuw4XLDgW2QuR4qfFoWp9xC%2BNYAQsnxeUHqH%2B6mkIdAu7xDxu0wA%2F06rgtV8PyqPlbDoTYGEgxbLmZMRJFlt98Yrn3Wgmi%2FPE0dq7QkXuYER7X10tXVO7HnX0M7m1Jxq69cBpho%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1915dfb39af8514997215d36b757362d5af24aa3819ba3000758760f7f3a57ca"
+        },
+        "hackerone_triager": false,
+        "hackerone_employee": false
+      },
+      "genius_execution_id": null,
+      "team_handle": "yahoo"
+    },
+    {
+      "id": 37259,
+      "is_internal": false,
+      "editable": false,
+      "type": "Activities::AgreedOnGoingPublic",
+      "message": "",
+      "automated_response": false,
+      "created_at": "2014-04-23T15:17:03.600Z",
+      "updated_at": "2014-04-23T15:17:03.600Z",
+      "first_to_agree": true,
+      "actor": {
+        "username": "akkilion",
+        "cleared": true,
+        "verified": true,
+        "url": "/akkilion",
+        "profile_picture_urls": {
+          "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/qdddjm8p4ypgol0ot85zdxm57vms/f4a495c04fdb224bac8ec64587537e511aa8c4925e7955bee0a19e0ed7d891dc?response-content-disposition=inline%3B%20filename%3D%22man-paint-sky-painting-colors-hood-illustration-concept-art.jpg%22%3B%20filename%2A%3DUTF-8%27%27man-paint-sky-painting-colors-hood-illustration-concept-art.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ44LRBWAD%2F20240102%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240102T080004Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGiKeRVTc5Yp1RddGNKdsirU%2FZeOTzS9fuGijcxCvH8dAiB4Iw%2BGge1dFwSPKR4DEO6WdQ1vgEqU42ElHRGBxoOIZyqyBQhAEAMaDDAxMzYxOTI3NDg0OSIMY0RYLE70maHWbXCnKo8FLLyvhvWvKyknnteOs58rzZl%2Bb07lny%2FmOJge1acHOIs%2FAp1ODmT2eCb2662mfDSuCcSclTriDSMNBe80jVII8lZY6SVsYkDcFVPGgfVD0llYTGZFdlP2HVOmC0%2FpoV6s07L5pDL%2BC%2B0Qd3UY57wcASWSpM%2B7HeXtQvvyYk2s2%2F%2FfZkSlzbpBsPeRXw1SD4U2tK%2Ftu69ol3X1lBs6KPWfR5Q1imxg4cxSHEH%2FDvTwxu2u6zqjSdB%2Fr0NN28V50vA9Su6xpW7DGzJmkHgQqpcK00tO7zyihMM4KtqDpULuG0Qr5ZvZC%2Fa2N%2BgylNc5s%2BQJbsILhlFg%2FUU51XLUr67QS7t8f7PK0sDLneKElB1jcdFN4MPjQftKxDh0aO9pFBbEAsU8Tml4tWEDi9TOhvIXBX6lreoyV6K28bLvROFT7uGe6z2Rhkj%2F39p%2BehrVERHBfrKEQvD3N7j47OjSsyLfBZs8%2Bvy2lD7gC%2FsKJAsSLfwk4RsDENjtyKxQTLgjUpYOw7K9fES8fTIFtBKzSxsA0bsFF60512hxgJl9VqrgNIdwMtM5q1%2FwEo4p%2FoQnX8Z98Lwr1KmdY4jd2h3gCiCfbFpDw8sMA35i0BndMZ0Y8Cx%2F48BVBvdPF%2BTFcxwkLhqjtkUTya9PDLEHrUsp2%2B%2FYhJFNCzSyrewlTcgFEGIWQqRrHKYqZ6DCyD%2B598FtX6rcXUbY%2FYtLcuLJbbxeJx5GqeVlAWDb674KkeJeaeCgMvvex7d0DhMcBk79BZZfoSxyf934te7Amyf8WhExZFinGa2YG1jw7dHzKU8TxzconD1K6ei16fhy7Cor%2BfSVeitjKKJFe7ANXmNnemOc6ck1b2BeoF4SIWjtAH3Z4qNjsDDR686sBjqyAWZJLWt7fDHrg6n4OGB0M7e388Oi1fEOy4lCUadPkzlBbkhvmyAAXN%2FsSZFzs1X1JmZ2PfG4abRWKkrFHSO27sVWaupIE7KkMPiZraHwFuw4XLDgW2QuR4qfFoWp9xC%2BNYAQsnxeUHqH%2B6mkIdAu7xDxu0wA%2F06rgtV8PyqPlbDoTYGEgxbLmZMRJFlt98Yrn3Wgmi%2FPE0dq7QkXuYER7X10tXVO7HnX0M7m1Jxq69cBpho%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1915dfb39af8514997215d36b757362d5af24aa3819ba3000758760f7f3a57ca"
+        },
+        "hackerone_triager": false,
+        "hackerone_employee": false
+      },
+      "genius_execution_id": null,
+      "team_handle": "yahoo"
+    },
+    {
+      "id": 62472,
+      "is_internal": false,
+      "editable": false,
+      "type": "Activities::NotEligibleForBounty",
+      "message": "",
+      "automated_response": false,
+      "created_at": "2014-05-30T22:21:56.316Z",
+      "updated_at": "2014-05-30T22:21:56.316Z",
+      "actor": {
+        "url": "/yahoo",
+        "ibb": false,
+        "profile_picture_urls": {
+          "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/ovsvj0mnvrwohrfwp6e245bqc0to/5136ed9b2fa7c4d4abbf39fb971047c62d98ec4740a88eb55d7e26373250a937?response-content-disposition=inline%3B%20filename%3D%22Slack%20600x600%20-%20YBANG.png%22%3B%20filename%2A%3DUTF-8%27%27Slack%2520600x600%2520-%2520YBANG.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ44LRBWAD%2F20240102%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240102T080004Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGiKeRVTc5Yp1RddGNKdsirU%2FZeOTzS9fuGijcxCvH8dAiB4Iw%2BGge1dFwSPKR4DEO6WdQ1vgEqU42ElHRGBxoOIZyqyBQhAEAMaDDAxMzYxOTI3NDg0OSIMY0RYLE70maHWbXCnKo8FLLyvhvWvKyknnteOs58rzZl%2Bb07lny%2FmOJge1acHOIs%2FAp1ODmT2eCb2662mfDSuCcSclTriDSMNBe80jVII8lZY6SVsYkDcFVPGgfVD0llYTGZFdlP2HVOmC0%2FpoV6s07L5pDL%2BC%2B0Qd3UY57wcASWSpM%2B7HeXtQvvyYk2s2%2F%2FfZkSlzbpBsPeRXw1SD4U2tK%2Ftu69ol3X1lBs6KPWfR5Q1imxg4cxSHEH%2FDvTwxu2u6zqjSdB%2Fr0NN28V50vA9Su6xpW7DGzJmkHgQqpcK00tO7zyihMM4KtqDpULuG0Qr5ZvZC%2Fa2N%2BgylNc5s%2BQJbsILhlFg%2FUU51XLUr67QS7t8f7PK0sDLneKElB1jcdFN4MPjQftKxDh0aO9pFBbEAsU8Tml4tWEDi9TOhvIXBX6lreoyV6K28bLvROFT7uGe6z2Rhkj%2F39p%2BehrVERHBfrKEQvD3N7j47OjSsyLfBZs8%2Bvy2lD7gC%2FsKJAsSLfwk4RsDENjtyKxQTLgjUpYOw7K9fES8fTIFtBKzSxsA0bsFF60512hxgJl9VqrgNIdwMtM5q1%2FwEo4p%2FoQnX8Z98Lwr1KmdY4jd2h3gCiCfbFpDw8sMA35i0BndMZ0Y8Cx%2F48BVBvdPF%2BTFcxwkLhqjtkUTya9PDLEHrUsp2%2B%2FYhJFNCzSyrewlTcgFEGIWQqRrHKYqZ6DCyD%2B598FtX6rcXUbY%2FYtLcuLJbbxeJx5GqeVlAWDb674KkeJeaeCgMvvex7d0DhMcBk79BZZfoSxyf934te7Amyf8WhExZFinGa2YG1jw7dHzKU8TxzconD1K6ei16fhy7Cor%2BfSVeitjKKJFe7ANXmNnemOc6ck1b2BeoF4SIWjtAH3Z4qNjsDDR686sBjqyAWZJLWt7fDHrg6n4OGB0M7e388Oi1fEOy4lCUadPkzlBbkhvmyAAXN%2FsSZFzs1X1JmZ2PfG4abRWKkrFHSO27sVWaupIE7KkMPiZraHwFuw4XLDgW2QuR4qfFoWp9xC%2BNYAQsnxeUHqH%2B6mkIdAu7xDxu0wA%2F06rgtV8PyqPlbDoTYGEgxbLmZMRJFlt98Yrn3Wgmi%2FPE0dq7QkXuYER7X10tXVO7HnX0M7m1Jxq69cBpho%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=af894f52a2319191547aa66be249fed64fed8521e443f1c798e4d9938bdb3e99"
+        },
+        "profile": {
+          "name": "Yahoo!"
+        }
+      },
+      "genius_execution_id": null,
+      "team_handle": "yahoo"
+    },
+    {
+      "id": 549202,
+      "is_internal": false,
+      "editable": false,
+      "type": "Activities::AgreedOnGoingPublic",
+      "message": "",
+      "automated_response": false,
+      "created_at": "2015-08-14T20:10:10.856Z",
+      "updated_at": "2015-08-14T20:10:10.856Z",
+      "actor": {
+        "username": "junot",
+        "cleared": false,
+        "verified": false,
+        "url": "/junot",
+        "profile_picture_urls": {
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/M5pzVfGfQwf2ibThc1LRahdB/fd3465a1d18de709ef6a7a4daaffea9f69b778e9708be2cc15159c7bef911a89"
+        },
+        "hackerone_triager": false,
+        "hackerone_employee": false
+      },
+      "genius_execution_id": null,
+      "team_handle": "yahoo"
+    },
+    {
+      "id": 549203,
+      "is_internal": false,
+      "editable": false,
+      "type": "Activities::ReportBecamePublic",
+      "message": "",
+      "automated_response": false,
+      "created_at": "2015-08-14T20:10:11.711Z",
+      "updated_at": "2015-08-14T20:10:11.711Z",
+      "actor": {
+        "username": "junot",
+        "cleared": false,
+        "verified": false,
+        "url": "/junot",
+        "profile_picture_urls": {
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/M5pzVfGfQwf2ibThc1LRahdB/fd3465a1d18de709ef6a7a4daaffea9f69b778e9708be2cc15159c7bef911a89"
+        },
+        "hackerone_triager": false,
+        "hackerone_employee": false
+      },
+      "genius_execution_id": null,
+      "team_handle": "yahoo"
+    },
+    {
+      "id": 551763,
+      "is_internal": false,
+      "editable": false,
+      "type": "Activities::Comment",
+      "message": "",
+      "automated_response": false,
+      "created_at": "2015-08-17T16:01:16.246Z",
+      "updated_at": "2015-08-17T16:01:54.216Z",
+      "actor": {
+        "username": "akkilion",
+        "cleared": true,
+        "verified": true,
+        "url": "/akkilion",
+        "profile_picture_urls": {
+          "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/qdddjm8p4ypgol0ot85zdxm57vms/f4a495c04fdb224bac8ec64587537e511aa8c4925e7955bee0a19e0ed7d891dc?response-content-disposition=inline%3B%20filename%3D%22man-paint-sky-painting-colors-hood-illustration-concept-art.jpg%22%3B%20filename%2A%3DUTF-8%27%27man-paint-sky-painting-colors-hood-illustration-concept-art.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ44LRBWAD%2F20240102%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240102T080004Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGiKeRVTc5Yp1RddGNKdsirU%2FZeOTzS9fuGijcxCvH8dAiB4Iw%2BGge1dFwSPKR4DEO6WdQ1vgEqU42ElHRGBxoOIZyqyBQhAEAMaDDAxMzYxOTI3NDg0OSIMY0RYLE70maHWbXCnKo8FLLyvhvWvKyknnteOs58rzZl%2Bb07lny%2FmOJge1acHOIs%2FAp1ODmT2eCb2662mfDSuCcSclTriDSMNBe80jVII8lZY6SVsYkDcFVPGgfVD0llYTGZFdlP2HVOmC0%2FpoV6s07L5pDL%2BC%2B0Qd3UY57wcASWSpM%2B7HeXtQvvyYk2s2%2F%2FfZkSlzbpBsPeRXw1SD4U2tK%2Ftu69ol3X1lBs6KPWfR5Q1imxg4cxSHEH%2FDvTwxu2u6zqjSdB%2Fr0NN28V50vA9Su6xpW7DGzJmkHgQqpcK00tO7zyihMM4KtqDpULuG0Qr5ZvZC%2Fa2N%2BgylNc5s%2BQJbsILhlFg%2FUU51XLUr67QS7t8f7PK0sDLneKElB1jcdFN4MPjQftKxDh0aO9pFBbEAsU8Tml4tWEDi9TOhvIXBX6lreoyV6K28bLvROFT7uGe6z2Rhkj%2F39p%2BehrVERHBfrKEQvD3N7j47OjSsyLfBZs8%2Bvy2lD7gC%2FsKJAsSLfwk4RsDENjtyKxQTLgjUpYOw7K9fES8fTIFtBKzSxsA0bsFF60512hxgJl9VqrgNIdwMtM5q1%2FwEo4p%2FoQnX8Z98Lwr1KmdY4jd2h3gCiCfbFpDw8sMA35i0BndMZ0Y8Cx%2F48BVBvdPF%2BTFcxwkLhqjtkUTya9PDLEHrUsp2%2B%2FYhJFNCzSyrewlTcgFEGIWQqRrHKYqZ6DCyD%2B598FtX6rcXUbY%2FYtLcuLJbbxeJx5GqeVlAWDb674KkeJeaeCgMvvex7d0DhMcBk79BZZfoSxyf934te7Amyf8WhExZFinGa2YG1jw7dHzKU8TxzconD1K6ei16fhy7Cor%2BfSVeitjKKJFe7ANXmNnemOc6ck1b2BeoF4SIWjtAH3Z4qNjsDDR686sBjqyAWZJLWt7fDHrg6n4OGB0M7e388Oi1fEOy4lCUadPkzlBbkhvmyAAXN%2FsSZFzs1X1JmZ2PfG4abRWKkrFHSO27sVWaupIE7KkMPiZraHwFuw4XLDgW2QuR4qfFoWp9xC%2BNYAQsnxeUHqH%2B6mkIdAu7xDxu0wA%2F06rgtV8PyqPlbDoTYGEgxbLmZMRJFlt98Yrn3Wgmi%2FPE0dq7QkXuYER7X10tXVO7HnX0M7m1Jxq69cBpho%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1915dfb39af8514997215d36b757362d5af24aa3819ba3000758760f7f3a57ca"
+        },
+        "hackerone_triager": false,
+        "hackerone_employee": false
+      },
+      "genius_execution_id": null,
+      "team_handle": "yahoo"
+    }
+  ],
+  "activity_page_count": 1,
+  "activity_page_number": 1,
+  "summaries": [
+    {
+      "id": 590,
+      "category": "team",
+      "content": "Thank you for your submission to the Yahoo Bug Bounty program. We were able to reproduce the issue you reported and have implemented appropriate fixes. We appreciate your adherence to responsible disclosure guidelines and look forward to your future participation in the program.",
+      "user": {
+        "id": 2059,
+        "username": "junot",
+        "name": "",
+        "bio": "",
+        "cleared": false,
+        "verified": false,
+        "website": null,
+        "location": "",
+        "created_at": "2013-12-18T17:07:46.131Z",
+        "url": "https://hackerone.com/junot",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "company",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/M5pzVfGfQwf2ibThc1LRahdB/ede8cd84a64d5392a2bb88ecb598721116469c27c015c2caa77148f11e211d58",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/M5pzVfGfQwf2ibThc1LRahdB/fd3465a1d18de709ef6a7a4daaffea9f69b778e9708be2cc15159c7bef911a89",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/M5pzVfGfQwf2ibThc1LRahdB/d7b0d969b6320751e1c58b9e3efff1e228054ee3d8eade5c51c4c79b25513a9c"
+        }
+      },
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": []
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

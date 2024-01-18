@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+        <title> Report {{id}}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="details">
+        <p><b>ReportID:</b>   <a href="https://hackerone.com/reports/{{report.id}}" target="_blank" rel="noopener noreferrer">{{report.id}}</a> </p>
+        <p><b>Title:</b>   {{report.title}}</p>
+        <p><b>Program:</b>  <a href="/allPrograms/{{report.client}}">{{report.client}}</a></p>
+        <p><b>Reported by:</b> <a href="/allReporters/{{report.reporter}}">{{report.reporter}}</a></p>
+        <p><b>Weakness:</b> <a href="/allWeaknesses/{{report.category}}">{{report.category}}</a></p>
+        <p><b>Bounty($):</b>   {{report.bounty}}</p>
+        <p><b>Severity:</b> {{report.severity}}</p>
+        <p><b>Description:</b>  {{report.description}}</p>   
+    </div>
+{% endblock %}

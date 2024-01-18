@@ -1,0 +1,11 @@
+            {% for result in results %}
+            <tr>
+                <td><a href="{{ url_for('report', id = result.id)}}">{{result.id}}</a></td>
+                <td><a href="{{ url_for('reporterName', reporter = result.reporter)}}">{{result.reporter}}</a></td>
+                <td><a href="{{ url_for('program', client = result.client)}}">{{result.client}}</a></td>
+                <td><a href="{{ url_for('weakness', category = result.category)}}">{{result.category}}</a></td>
+                <td>{{result.severity}}</td>
+                <td>{{result.bounty}}</td>
+            </tr>
+
+            {% endfor %}

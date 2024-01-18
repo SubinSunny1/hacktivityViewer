@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title> Published Reports</title>
+{% endblock %}
+
+{% block content %}
+        <h1 class="all-reports">All Published Reports from HackerOne</h1>
+        <ul class="report-list">
+            {% for r in reports_on_page %}
+            <li class="report-list"><a href="{{ url_for('report', id = r.id)}}">{{r.id}}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="pages">
+        {% if page > 1 %}
+        <a href="{{url_for('publishedReports', page=page-1)}}">Pervious</a>
+        {% endif %}
+        <span>Page {{page}} of {{total_pages}}</span>
+        {% if page < total_pages %}
+        <a href="{{url_for('publishedReports', page=page+1)}}">Next</a>
+        {% endif %}
+        </div>
+
+{% endblock %}

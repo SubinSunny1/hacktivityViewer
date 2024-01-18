@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title> {{reporter}}</title>
+{% endblock %}
+
+{% block content %}
+        <h1 class="all-reporters">All Reports of {{reporter}}</h1>
+        <ul class="reporter-list">
+            {% for r in reporterName %}
+            <li class="reporter-list"><a href="{{ url_for('report', id = r.id)}}">{{r.id}}</a></li>
+            {% endfor %}
+        </ul>
+{% endblock %}
