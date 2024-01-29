@@ -12,7 +12,7 @@ c = conn.cursor()
 
 #110
 #2302094
-for i in range(616371,2302094):
+for i in range(1286351,2302094):
     id = None
     title = None
     client = None

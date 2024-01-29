@@ -6,6 +6,10 @@
         <title>h1Scraper</title>
         <link rel="stylesheet" href="/static/css/style.css">
         <script src="https://kit.fontawesome.com/15e7428a60.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/3.0.1/bokeh.min.js"
+        integrity="sha512-p7EUyPmeDeOwHiu7fIZNboAcQLxei3sWtXoHoShWWiPNUSRng/Xs5JPcaFPRa4dKy9IuHjyIQuLE4caGCwuewA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     </head>
     <body>
         <header>
@@ -19,6 +23,8 @@
         
             </div>
         </header>
+        <form class="search" action="/searchPage"><input name="q" placeholder="Search" type="search" autocomplete="off" autofocus ><button><i class="fa-solid fa-magnifying-glass"></i></button></form>
+
         <div class="container">
         <table class="top-bounty">
             <caption class="table-header">Top 10 Bounties</caption>
@@ -32,52 +38,13 @@
             
             {% for row in top_10_bounties %}
             <tr>
-                {% for cell in row %}                
-                <td>{{cell}}</td>    
-                {% endfor %}            
-            </tr>
-            {% endfor %}
-        </table>
-        <table class="top-reporters">
-            <caption class="table-header">Top 10 Reporters</caption>
-            <tr class="table-header">
-                <th>UserID</th>
-                <th>No. of Reports</th>
-            </tr>
-            {% for row in top_10_reporters %}
-            <tr>
-                <td>{{row[0][0]}}</td>
+                <td><a href="/allReporters/{{row[0]}}">{{row[0]}}</a></td>
                 <td>{{row[1]}}</td>
+                <td><a href="/publishedReports/{{row[2]}}">{{row[2]}}</a></td>
+                <td><a href="/allPrograms/{{row[3]}}">{{row[3]}}</a></td>
+                <td><a href="/allWeaknesses/{{row[4]}}">{{row[4]}}</a></td>    
             </tr>
             {% endfor %}
-        </table>
-        <table class="top-earners">
-            <caption class="table-header">Top 10 Earners</caption>
-            <tr class="table-header">
-                <th>UserID</th>
-                <th>Total Earnings $</th>                
-            </tr>
-            {% for row in top_10_earners %}
-            <tr>
-                <td>{{row[0]}}</td>
-                <td>{{row[1]}}</td>
-            </tr>
-            {% endfor %}
-
-        </table>
-        <table class="top-programs">
-            <caption class="table-header">Top 10 Programs</caption>
-            <tr class="table-header">
-                <th>Program</th>
-                <th>Total Bounties Rewarded $</th>                
-            </tr>
-            {% for row in top_10_programs %}
-            <tr>
-                <td>{{row[0]}}</td>
-                <td>{{row[1]}}</td>
-            </tr>
-            {% endfor %}
-
         </table>
         <table class="top-reporterd-vulnerabilities">
             <caption class="table-header">Top 10 Reported Weaknesses</caption>
@@ -87,11 +54,12 @@
             </tr>
             {% for row in top_10_reporterd_vulnerability %}
             <tr>
-                <td>{{row[0][0]}}</td>
+                <td><a href="/allWeaknesses/{{row[0][0]}}">{{row[0][0]}}</a></td>
                 <td>{{row[1]}}</td>
             </tr>
             {% endfor %}
         </table>
+
         <table class="top-rewarded-vulnerabilities">
             <caption class="table-header">Top 10 Rewarded Weaknesses</caption>
             <tr class="table-header">
@@ -100,16 +68,83 @@
             </tr>
             {% for row in top_10_rewarded_vulnerabilities %}
             <tr>
-                <td>{{row[0]}}</td>
+                <td><a href="/allWeaknesses/{{row[0]}}">{{row[0]}}</a></td>
                 <td>{{row[1]}}</td>
             </tr>
             {% endfor %}
 
         </table>
 
+        <table class="top-reported-programs">
+            <caption class="table-header">Top 10 Reported Programs</caption>
+            <tr class="table-header">
+                <th>Program</th>
+                <th>No. of Reports</th>                
+            </tr>
+            {% for row in top_10_reported_programs %}
+            <tr>
+                <td><a href="/allPrograms/{{row[0][0]}}">{{row[0][0]}}</a></td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <table class="top-rewarding-programs">
+            <caption class="table-header">Top 10 Rewarding Programs</caption>
+            <tr class="table-header">
+                <th>Program</th>
+                <th>Total Bounties Rewarded $</th>                
+            </tr>
+            {% for row in top_10_rewarding_programs %}
+            <tr>
+                <td><a href="/allPrograms/{{row[0]}}">{{row[0]}}</a></td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <table class="top-reporters">
+            <caption class="table-header">Top 10 Reporters</caption>
+            <tr class="table-header">
+                <th>UserID</th>
+                <th>No. of Reports</th>
+            </tr>
+            {% for row in top_10_reporters %}
+            <tr>
+                <td><a href="/allReporters/{{row[0][0]}}">{{row[0][0]}}</a></td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <table class="top-earners">
+            <caption class="table-header">Top 10 Earners</caption>
+            <tr class="table-header">
+                <th>UserID</th>
+                <th>Total Earnings $</th>                
+            </tr>
+            {% for row in top_10_earners %}
+            <tr>
+                <td><a href="/allReporters/{{row[0]}}">{{row[0]}}</a></td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
 
         </div>
         
+        <div class="p1">
+            {{ a1 | safe }}
+            {{ b1 | safe }}
+        </div>
+
+        <div class="p2">
+            {{ a2 | safe }}
+            {{ b2 | safe }}
+        </div>
+
         <footer>Thank You!</footer>
 
     </body>

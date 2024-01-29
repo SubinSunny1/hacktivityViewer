@@ -8,7 +8,7 @@
         <h1 class="all-weaknesses">All Reports on {{category}}</h1>
         <ul class="weakness-list">
             {% for w in weaknesses_on_page %}
-            <li class="weakness-list"><a href="{{ url_for('report', id = w.id)}}">{{w.id}}</a></li>
+            <li class="weakness-list"><a href="{{ url_for('report', id = w.id)}}">{{w.id}}</a> -- {{w.title}} -- <a href="/allPrograms/{{w.client}}">{{w.client}}</a></li>
             {% endfor %}
         </ul>
         <div class="pages">

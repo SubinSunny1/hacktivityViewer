@@ -8,7 +8,7 @@
         <h1 class="all-programs">All Programs from HackerOne</h1>
         <ul class="program-list">
             {% for p in programs_on_page %}
-            <li class="program-list"><a href="{{ url_for('program', client = p.client)}}">{{p.client}}</a></li>
+            <li class="program-list"><a href="/allPrograms/{{p[0][0]}}">{{p[0][0]}}</a> -- {{p[1]}} reports</li>
             {% endfor %}
         </ul>
         <div class="pages">

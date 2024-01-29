@@ -8,7 +8,7 @@
         <h1 class="all-reporters">All Reporters in HackerOne</h1>
         <ul class="reporter-list">
             {% for r in reporters_on_page %}
-            <li class="reporter-list"><a href="{{ url_for('reporterName', reporter = r.reporter)}}">{{r.reporter}}</a></li>
+            <li class="reporter-list"><a href="/allReporters/{{r[0][0]}}">{{r[0][0]}}</a> -- {{r[1]}} reports</li>
             {% endfor %}
         </ul>
         <div class="pages">

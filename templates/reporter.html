@@ -8,7 +8,7 @@
         <h1 class="all-reporters">All Reports of {{reporter}}</h1>
         <ul class="reporter-list">
             {% for r in reporterName %}
-            <li class="reporter-list"><a href="{{ url_for('report', id = r.id)}}">{{r.id}}</a></li>
+            <li class="reporter-list"><a href="{{ url_for('report', id = r.id)}}">{{r.id}}</a> -- {{r.title}} --<a href="/allWeaknesses/{{r.category}}">{{r.category}}</a></li>
             {% endfor %}
         </ul>
 {% endblock %}
