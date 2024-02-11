@@ -6,13 +6,13 @@ c = conn.cursor()
 
 #c.execute('''CREATE TABLE
 #        report(id TEXT, title TEXT, client TEXT, reporter TEXT,
-#       category TEXT, bounty FLOAT, severity TEXT, description TEXT)''')
+#       category TEXT, bounty FLOAT, severity TEXT, description TEXT, PRIMARY KEY("id"))''')
 
 #reportID = 110
 
 #110
 #2302094
-for i in range(1286351,2302094):
+for i in range(2083669,2302094):
     id = None
     title = None
     client = None

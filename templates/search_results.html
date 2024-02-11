@@ -1,11 +1,43 @@
-            {% for result in results %}
-            <tr>
-                <td><a href="{{ url_for('report', id = result.id)}}">{{result.id}}</a></td>
-                <td><a href="{{ url_for('reporterName', reporter = result.reporter)}}">{{result.reporter}}</a></td>
-                <td><a href="{{ url_for('program', client = result.client)}}">{{result.client}}</a></td>
-                <td><a href="{{ url_for('weakness', category = result.category)}}">{{result.category}}</a></td>
-                <td>{{result.severity}}</td>
-                <td>{{result.bounty}}</td>
-            </tr>
+{% extends 'layout.html' %}
 
-            {% endfor %}
+{% block title %}
+<title> Search </title>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="res">
+<h1 class="searchPage">Search Results for "{{ q }}"</h1>
+
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Report ID</th>
+            <th>Title</th>
+            <th>Program</th>
+            <th>Reporter</th>
+            <th>Weakness</th>
+            <th>Bounty</th>
+            <th>Severity</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+            <tr>
+                <td>{{ result.id }}</td>
+                <td>{{ result.title }}</td>
+                <td>{{ result.client }}</td>
+                <td>{{ result.reporter }}</td>
+                <td>{{ result.category }}</td>
+                <td>{{ result.bounty }}</td>
+                <td>{{ result.severity }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+{% endblock %}

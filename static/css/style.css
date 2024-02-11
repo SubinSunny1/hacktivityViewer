@@ -11,6 +11,12 @@ body{
    min-height: 100vh;
    flex-direction: column;
 }
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
 .topnav {
     background-color: #333;
     overflow:hidden
@@ -65,12 +71,21 @@ button .fa-solid{
 .search{
     background: white;
     width: 300px;
-    height: 30px;
+    height: 47px;
     margin: 3px 3px;
     text-align: center;
     clear: both;
     padding: auto;
 }
+.data-table, .res{
+    background-color: #ddd;
+}
+.dataTables_length select  {
+    background-color: white !important;
+ }
+ .dataTables_filter input  {
+    background-color: white !important; 
+ }
 .search-results{
     background-color: #15a06d;
     padding: 3px 3px;
@@ -84,7 +99,7 @@ button .fa-solid{
     padding: 14px 16px;
 
 }
-.all-reports, .all-programs, .all-reporters, .all-weaknesses{
+.all-reports, .all-programs, .all-reporters, .all-weaknesses, .searchPage{
     background: #15a06d;
     color: black;
 }
@@ -119,26 +134,40 @@ footer{
     width: 100%;   
     vertical-align: baseline; 
 }
-.top-bounty, .top-reporters, .top-earners,.top-programs, .top-reporterd-vulnerabilities, .top-rewarded-vulnerabilities{
-    background: #43e458;
+.top-bounty, .top-reporters, .top-rewarded-vulnerabilities,.top-rewarding-programs,.top-reported-programs, .top-reporterd-vulnerabilities{
+    background: #15a06d;
     border-spacing: 0;
     margin: 1rem;
     border: 1px solid;
     border-color: white;
     width:min-content;
     display: inline-table;
-    float: right;
+    float:left;
     box-sizing: border-box;
     font-size: smaller;
     font-family: verdana;
 }
-.table-header{
-    text-align: center;
-    background-color: greenyellow;
+.top-earners{
+    background: #15a06d;
+    border-spacing: 0;
+    margin: 1rem;
     border: 1px solid;
     border-color: white;
-    font-weight: bold;
+    width:min-content;
+    display: inline-table;
+    float:inline-end;
+    box-sizing: border-box;
+    font-size: smaller;
+    font-family: verdana;  
+}
+.table-header{
+    text-align: center;
+    background-color: #0e7a53;
+    border: 1px solid;
+    border-color: white;
+    font-weight:lighter;
     font-size: larger;
+    color: #f2f2f2;
 }
 td,th{
     padding: 1px;
@@ -146,4 +175,7 @@ td,th{
     border-color: white;
     font-family: 'Times New Roman';
     font-weight: bolder;
+}
+.p1,.p2{
+    margin: 0 auto;
 }

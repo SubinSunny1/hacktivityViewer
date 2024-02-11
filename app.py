@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import desc
+from sqlalchemy import desc, or_
 import os.path
 from collections import Counter
+
+import sqlite3
 
 from math import pi
 
@@ -140,23 +142,29 @@ def index():
                            top_10_rewarding_programs=top_10_rewarding_programs, top_10_reported_programs=top_10_reported_programs, top_10_reporterd_vulnerability=top_10_reporterd_vulnerability,
                              top_10_rewarded_vulnerabilities=top_10_rewarded_vulnerabilities,a1=a1,b1=b1,a2=a2,b2=b2)
 
-@app.route('/searchPage')
-def searchPage():
-    return render_template("search_page.html")
-
 @app.route('/search')
 def search():
     q = request.args.get('q')
-    print(q)
 
-    if q:
-        results = Report.query.filter(Report.id.icontains(q) | Report.title.icontains(q) | Report.client.icontains(q) | 
-                            Report.reporter.icontains(q) | Report.category.icontains(q) | Report.description.icontains(q)).all()
+    return redirect(url_for('search_results', q=q))
 
-    else:
-        results = []
+@app.route('/search_results')
+def search_results():
+    q = request.args.get('q')
 
-    return render_template("search_results.html", results=results)
+
+    results = Report.query.filter(or_(
+        Report.id.icontains(f'%{q}%'),
+        Report.title.icontains(f'%{q}%'),
+        Report.client.icontains(f'%{q}%'),
+        Report.reporter.icontains(f'%{q}%'),
+        Report.category.icontains(f'%{q}%'),
+        Report.bounty.icontains(f'%{q}%'),
+        Report.severity.icontains(f'%{q}%'),
+        Report.description.icontains(f'%{q}%')
+    )).all()
+
+    return render_template('search_results.html', q=q, results=results)
 
 @app.route('/publishedReports/<id>')
 def report(id):

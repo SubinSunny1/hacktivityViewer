@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-        <h1 class="all-reporters">All Reports of {{reporter}}</h1>
+        <h1 class="all-reporters">All Reports of <a href="https://hackerone.com/{{reporter}}?type=user" target="_blank" rel="noopener noreferrer">{{reporter}}</a></h1>
         <ul class="reporter-list">
             {% for r in reporterName %}
             <li class="reporter-list"><a href="{{ url_for('report', id = r.id)}}">{{r.id}}</a> -- {{r.title}} --<a href="/allWeaknesses/{{r.category}}">{{r.category}}</a></li>

@@ -9,12 +9,16 @@
         <link rel="stylesheet" href="/static/css/style.css">
         <script src="https://kit.fontawesome.com/15e7428a60.js" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+        <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+
     </head>
     <body>
         <div id="page-container">
             <header>
                 <div class="topnav">
-                    <a class="active" href="/">h1Scraper</a>
+                    <a class="active" href="/">h1Tracker</a>
                     <a href="/publishedReports">Published Reports</a>
                     <a href="/allPrograms">Programs</a>
                     <a href="/allReporters">Reporters</a>
@@ -23,6 +27,11 @@
 
                 </div>
             </header>
+            <form class="search" action="/search" method="GET">
+                <input type="text" name="query" placeholder="Search">
+                <button type="submit">Search</button>
+            </form>        
+    
             <div id="content-wrap">
             {% block content %}
 
@@ -30,5 +39,12 @@
             </div>
             <footer>Thank You!</footer>
         </div>
+        <script>
+            $(document).ready(function() {
+                // Initialize DataTables for all tables with class 'data-table'
+                $('.data-table').DataTable();
+            });
+        </script>
+
     </body>
 </html>

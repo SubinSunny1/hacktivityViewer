@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-        <h1 class="all-programs">All Reports of {{client}}</h1>
+        <h1 class="all-programs">All Reports of <a href="https://hackerone.com/directory/programs?q={{client}}&active_only=false" target="_blank" rel="noopener noreferrer">{{client}}</a></h1>
         <ul class="program-list">
             {% for p in programs_on_page %}
             <li class="program-list"><a href="{{ url_for('report', id = p.id)}}">{{p.id}}</a> -- {{p.title}} -- <a href="/allWeaknesses/{{p.category}}">{{p.category}}</a></li>

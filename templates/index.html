@@ -9,21 +9,26 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/3.0.1/bokeh.min.js"
         integrity="sha512-p7EUyPmeDeOwHiu7fIZNboAcQLxei3sWtXoHoShWWiPNUSRng/Xs5JPcaFPRa4dKy9IuHjyIQuLE4caGCwuewA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 
     </head>
     <body>
         <header>
             <div class="topnav">
-                <a class="active" href="/">h1Scraper</a>
+                <a class="active" href="/">h1Tracker</a>
                 <a href="publishedReports">Published Reports</a>
                 <a href="/allPrograms">Programs</a>
                 <a href="/allReporters">Reporters</a>
                 <a href="/allWeaknesses">Weaknesses</a>
                 <a href="/searchPage">Search<button><i class="fa-solid fa-magnifying-glass"></i></button></a>
-        
             </div>
         </header>
-        <form class="search" action="/searchPage"><input name="q" placeholder="Search" type="search" autocomplete="off" autofocus ><button><i class="fa-solid fa-magnifying-glass"></i></button></form>
+        <form class="search" action="/search" method="GET">
+            <input type="text" name="query" placeholder="Search">
+            <button type="submit">Search</button>
+        </form>        
 
         <div class="container">
         <table class="top-bounty">
@@ -146,7 +151,12 @@
         </div>
 
         <footer>Thank You!</footer>
-
+        <script>
+            $(document).ready(function() {
+                // Initialize DataTables for all tables with class 'data-table'
+                $('.data-table').DataTable();
+            });
+        </script>
     </body>
 
 </html>
